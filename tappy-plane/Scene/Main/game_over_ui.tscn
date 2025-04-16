@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://n422nb4jvsye"]
+
+[ext_resource type="LabelSettings" uid="uid://bd6iofwfvve4y" path="res://Scene/Main/score.tres" id="1_b05wn"]
+[ext_resource type="Script" uid="uid://b27hm27tmt0s2" path="res://Scene/Main/game_over_ui.gd" id="1_qnnm2"]
+[ext_resource type="LabelSettings" uid="uid://bk4cekdg4fqbl" path="res://Scene/Main/start.tres" id="2_qnnm2"]
+
+[node name="GameOverUI" type="CanvasLayer"]
+script = ExtResource("1_qnnm2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Score Label" type="Label" parent="Control"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+label_settings = ExtResource("1_b05wn")
+
+[node name="Game over Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = ExtResource("1_b05wn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Press Exit Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -24.5
+offset_right = 37.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press Exit
+"
+label_settings = ExtResource("2_qnnm2")
+horizontal_alignment = 1
+vertical_alignment = 1

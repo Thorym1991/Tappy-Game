@@ -1,9 +1,17 @@
 extends Node2D
 
+
 const PIPES = preload("res://Scene/pipe/pipes.tscn")
+var MAIN = load("res://Scene/Main/main.tscn")
+
 @onready var lower_point: Marker2D = $LowerPoint
 @onready var upper_point: Marker2D = $UpperPoint
 @onready var pipes_holder: Node = $PipesHolder
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Exit") and event.is_echo() == false:
+		get_tree().change_scene_to_packed(MAIN)
+
 
 
 # Called when the node enters the scene tree for the first time.
