@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Tappy
 
-signal on_plane_died
+#signal on_plane_died ausgelagerert in SignalHub
 
 
 const JUMP_POWER: float = -350.0
@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -38,5 +38,5 @@ func fly(delta: float)-> void:
 func die() -> void:
 	animated_sprite_2d.stop()
 	set_physics_process(false)
-	on_plane_died.emit()
+	SignalHub.emit_on_plane_died()
 	

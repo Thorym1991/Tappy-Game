@@ -2,15 +2,11 @@ extends Node2D
 
 
 const PIPES = preload("res://Scene/pipe/pipes.tscn")
-var MAIN = load("res://Scene/Main/main.tscn")
 
+@onready var game_over_ui: Control = $GameOverUI
 @onready var lower_point: Marker2D = $LowerPoint
 @onready var upper_point: Marker2D = $UpperPoint
 @onready var pipes_holder: Node = $PipesHolder
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("Exit") and event.is_echo() == false:
-		get_tree().change_scene_to_packed(MAIN)
 
 
 
@@ -19,9 +15,12 @@ func _ready() -> void:
 	_spwan_pipes()
 	
 
+func _enter_tree() -> void:
+	SignalHub._on_plane_died.connect(_on_plane_died)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _spwan_pipes() -> void:
