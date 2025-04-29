@@ -1,5 +1,7 @@
 extends Control
 
+@onready var score: Label = $MarginContainer/Score
+
 
 
 
@@ -12,4 +14,4 @@ func _unhandled_input(event: InputEvent) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_tree().paused = false
-	pass # Replace with function body.
+	score.text = "%04d" % ScoreManager.high_score

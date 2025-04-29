@@ -1,5 +1,9 @@
 extends Node2D
 
+
+@onready var laser: Area2D = $Laser
+
+
 const Speed: float = 120.0
 const PIPES = preload("res://Scene/pipe/pipes.tscn")
 
@@ -29,3 +33,9 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 func _on_pipe_body_entered(body: Node2D) -> void:
 	if body is Tappy:
 		body.die()
+
+
+func _on_laser_body_entered(body: Node2D) -> void:
+	if body is Tappy:
+		laser.body_entered.disconnect(_on_laser_body_entered)
+		SignalHub.emit_on_popint_scored()

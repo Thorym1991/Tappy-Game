@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SignalHub="*res://Scene/Global/SignalHub.gd"
 GameManager="*res://Scene/Global/GameManager.gd"
+ScoreManager="*res://Scene/Global/ScoreManager.gd"
 
 [display]
 
@@ -29,6 +30,8 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
+"res://Resources/": "yellow",
+"res://Resources/Classes/": "yellow",
 "res://Scene/": "purple",
 "res://Script/": "green",
 "res://assets/": "red"

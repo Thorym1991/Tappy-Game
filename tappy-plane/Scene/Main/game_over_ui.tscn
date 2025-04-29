@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://n422nb4jvsye"]
+[gd_scene load_steps=5 format=3 uid="uid://n422nb4jvsye"]
 
 [ext_resource type="LabelSettings" uid="uid://bd6iofwfvve4y" path="res://Scene/Main/score.tres" id="1_b05wn"]
 [ext_resource type="Script" uid="uid://b27hm27tmt0s2" path="res://Scene/Main/game_over_ui.gd" id="1_qnnm2"]
 [ext_resource type="LabelSettings" uid="uid://bk4cekdg4fqbl" path="res://Scene/Main/start.tres" id="2_qnnm2"]
+[ext_resource type="AudioStream" uid="uid://ckbnch4puq4ic" path="res://assets/audio/score.wav" id="4_4wgip"]
 
 [node name="GameOverUI" type="Control"]
 process_mode = 3
@@ -14,10 +15,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qnnm2")
 
-[node name="Score Label" type="Label" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 offset_right = 40.0
-offset_bottom = 29.0
+offset_bottom = 40.0
+
+[node name="Score Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
 text = "0"
 label_settings = ExtResource("1_b05wn")
 
@@ -60,3 +64,13 @@ text = "Press Space
 label_settings = ExtResource("2_qnnm2")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.01
+one_shot = true
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4wgip")
+volume_db = -19.676
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

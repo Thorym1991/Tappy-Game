@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgp4knjy4to15"]
+[gd_scene load_steps=7 format=3 uid="uid://bgp4knjy4to15"]
 
 [ext_resource type="Script" uid="uid://bg7lct6xvl8i0" path="res://Scene/Game/game.gd" id="1_1k6df"]
 [ext_resource type="Texture2D" uid="uid://bpoif4u0sycx6" path="res://assets/background/rocks_2.png" id="1_ieffa"]
+[ext_resource type="PackedScene" uid="uid://tpib3dlaw1ne" path="res://parallax_bg.tscn" id="2_c8ohb"]
 [ext_resource type="PackedScene" uid="uid://6e32ikm6jij6" path="res://Scene/Plane/plane.tscn" id="2_gs4cb"]
 [ext_resource type="PackedScene" uid="uid://djhak8rs2h3at" path="res://Scene/Game/barrier.tscn" id="3_cvfki"]
 [ext_resource type="PackedScene" uid="uid://n422nb4jvsye" path="res://Scene/Main/game_over_ui.tscn" id="5_p5aa2"]
@@ -9,7 +10,10 @@
 [node name="Game" type="Node2D"]
 script = ExtResource("1_1k6df")
 
+[node name="ParallaxBg" parent="." instance=ExtResource("2_c8ohb")]
+
 [node name="Rocks2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(202, 372)
 texture = ExtResource("1_ieffa")
 
@@ -21,7 +25,7 @@ position = Vector2(87, 442)
 [node name="PipesHolder" type="Node" parent="."]
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 1.2
+wait_time = 1.376
 autostart = true
 
 [node name="LowerPoint" type="Marker2D" parent="."]

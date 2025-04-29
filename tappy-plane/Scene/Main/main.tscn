@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://10u7ws3pm1k1"]
 
-[ext_resource type="Texture2D" uid="uid://cy3f5owhnvn42" path="res://assets/background/sky.png" id="1_ajaps"]
+[ext_resource type="Texture2D" uid="uid://cy3f5owhnvn42" path="res://Scene/sky.png" id="1_ajaps"]
 [ext_resource type="Script" uid="uid://diidpcr3vj5vr" path="res://Scene/Main/main.gd" id="1_frkly"]
 [ext_resource type="LabelSettings" uid="uid://dub50235hx5f4" path="res://Scene/Main/main.tres" id="2_t4vit"]
 [ext_resource type="LabelSettings" uid="uid://bd6iofwfvve4y" path="res://Scene/Main/score.tres" id="3_frkly"]
@@ -109,7 +109,7 @@ label_settings = ExtResource("3_frkly")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_7y4ar")
-volume_db = -8.432
+volume_db = -32.847
 autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
